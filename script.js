@@ -89,7 +89,11 @@ function totalPrice(price) {
 
 for (let i = 0; i < deleteBtn.length; i++) {
   deleteBtn[i].addEventListener("click", function () {
-    deleteBtn[i].parentElement.remove();
+    console.log(i);
+    console.log(deleteBtn);
+    console.log(deleteBtn[i]);
+    console.log(i > deleteBtn.length - 1 ? i-- : i);
+    deleteBtn[i > deleteBtn.length ? i-- : i].parentElement.remove();
     document.getElementById("total").innerHTML = totalPrice(-articles[i].prix);
   });
 }
